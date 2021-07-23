@@ -17,15 +17,6 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app });
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/books", 
-  {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
